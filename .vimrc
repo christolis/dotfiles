@@ -14,10 +14,12 @@ set laststatus=2
 set secure
 set exrc
 set encoding=utf-8
+set formatoptions+=r
 setglobal fileencoding=utf-8
 set nohidden
 set nohlsearch
 set copyindent
+
 set smartindent
 set breakindent
 set nowrap
@@ -47,6 +49,7 @@ set signcolumn=no
 packadd YouCompleteMe
 packadd ctrlp
 packadd editorconfig-vim
+packadd vim-airline
 
 " Nerdtree
 packadd nerdtree
