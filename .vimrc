@@ -96,11 +96,37 @@ let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 " For java ycm
 let g:ycm_java_binary_path = '/usr/bin/java'
 nnoremap <C-]> :YcmCompleter GoToDefinition<CR>
+let g:ycm_key_invoke_completion = '<C-z>'
+" let g:ycm_auto_trigger = 1 
 
-" For viewing git diff
+" For viewing git diff.
+" Instructions: Press the '\' key then type gd to trigger this.
 function! GitDiff()
-    :silent write
     :silent execute '!git diff --color=always | less -R'
     :redraw!
 endfunction
 nnoremap <leader>gd :call GitDiff()<CR>
+
+let g:twid = 0
+let g:twjob = 0
+function! RunGradlew()
+    let wid = win_getid()
+    botright term ./gradlew spotlessApply run
+
+    " Now we're in the terminal buffer
+    let g:twid = win_getid()
+    resize 20
+    call win_gotoid(wid)
+endfunction
+
+function! StopGradlew()
+    let twid = win_getid()
+    call win_gotoid(g:twid)
+    quit!
+    call win_gotoid(twid)
+endfunction
+
+" For running and stopping Gradle project
+" Instructions: Press the '\' key then type rgp to trigger this.
+nnoremap <leader>rgp :call RunGradlew()<CR>
+nnoremap <leader>sgp :call StopGradlew()<CR>
