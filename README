@@ -1,0 +1,25 @@
+christolis's dotfiles
+=====================
+
+Here we are finally, a central repository with all dotfiles that I use every
+day. These files are the result of the themes and tools that you see when I
+stream my work to other people on the internet.
+
+Feel free to clone this repository, use the dotfiles, change them how you like
+them. The way I've designed my dotfiles work for me, though that does not
+necessarily mean they will work for you. Experiment freely...
+
+I got motivated to upload my own version of dotfiles and share them with other
+people since I have been badgered with a countless stream of questions ranging
+from what keyboard I use to what tools and themes I use. Well, hopefully this
+repostiory solves all your questions.
+
+When cloning this repository on your local machine, make sure you've passed the
+`--bare` parameter and make an alias that is bound to where you've cloned the
+repository as well as the work tree directory:
+
+    alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+Unless you happen to be a masochist and you find great entertainment in
+rewriting these parameters every time you would like to perform a command
+regarding dotfiles.
